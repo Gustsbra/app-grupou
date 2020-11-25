@@ -6,15 +6,15 @@ import {
 } from './styles';
 
 
-const Dashboard = () => {
+const Skills = () => {
 
   return (
     <Container>
         <Texto>
-        ToDO - Tela principal com Dashboard
+        ToDO - Tela com as Skills do Aluno
         </Texto>
     </Container>
   )
   }
   
-export default Dashboard
+export default Skills

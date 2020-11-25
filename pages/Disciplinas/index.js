@@ -6,15 +6,15 @@ import {
 } from './styles';
 
 
-const Dashboard = () => {
+const Disciplinas = () => {
 
   return (
     <Container>
         <Texto>
-        ToDO - Tela principal com Dashboard
+          ToDO - Tela com as Disciplinas inscritas
         </Texto>
     </Container>
   )
   }
   
-export default Dashboard
+export default Disciplinas

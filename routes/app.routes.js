@@ -5,6 +5,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Dashboard from '../pages/Dashboard';
 import Groups from '../pages/Groups'
+import Disciplinas from '../pages/Disciplinas'
+import Skills from '../pages/Skills'
 import Settings from '../pages/Settings';
 
 const Tab = createBottomTabNavigator();
@@ -20,6 +22,7 @@ const AppRoutes = () => {
         }
       }
     >
+
       <Tab.Screen
         name="Dashboard"
         component={Dashboard}
@@ -35,6 +38,7 @@ const AppRoutes = () => {
           }
         }
       />
+
       <Tab.Screen
         name="Grupos"
         component={Groups}
@@ -50,6 +54,39 @@ const AppRoutes = () => {
           }
         }
       />
+
+      <Tab.Screen
+        name="Disciplinas"
+        component={Disciplinas}
+        options={
+          {
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons
+                name="book-open"
+                color={color}
+                size={32}
+              />
+            )
+          }
+        }
+      />
+
+      <Tab.Screen
+        name="Skills"
+        component={Skills}
+        options={
+          {
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons
+                name="puzzle-outline"
+                color={color}
+                size={32}
+              />
+            )
+          }
+        }
+      />
+
       <Tab.Screen
         name="Perfil"
         component={Settings}
