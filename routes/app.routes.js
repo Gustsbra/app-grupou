@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Dashboard from '../pages/Dashboard';
-import Chat from '../pages/Chat';
 import Groups from '../pages/Groups'
 import Settings from '../pages/Settings';
 
@@ -23,7 +22,7 @@ const AppRoutes = () => {
     >
       <Tab.Screen
         name="Dashboard"
-        component={Chat}
+        component={Dashboard}
         options={
           {
             tabBarIcon: ({ color }) => (

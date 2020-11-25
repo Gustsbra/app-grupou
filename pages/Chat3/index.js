@@ -18,7 +18,7 @@ import {
 import firebase from 'firebase';
 import 'firebase/firestore';
 
-const Chat = () => {
+const Chat3 = ({navigation}) => {
 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -41,7 +41,7 @@ const Chat = () => {
 
   useEffect(() => {
     const listener = firebase.firestore()
-      .collection('mensagens').onSnapshot(ListenUpdateMessages)
+      .collection('chat3').onSnapshot(ListenUpdateMessages)
 
     return () => listener()
   }, [])
@@ -55,7 +55,7 @@ const Chat = () => {
     }
 
     try {
-      firebase.firestore().collection('mensagens').add({
+      firebase.firestore().collection('chat3').add({
         texto: newMessage,
         lida: false
       })
@@ -96,4 +96,4 @@ const Chat = () => {
   )
 }
 
-export default Chat
+export default Chat3
