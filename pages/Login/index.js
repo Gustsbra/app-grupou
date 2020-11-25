@@ -17,7 +17,8 @@ import {
   Logo,
   CaixaTextoChamada,
   TextoChamada,
-  TextoGrupou
+  TextoGrupou,
+  ButtonForgot
 
 } from './styles';
 
@@ -27,7 +28,7 @@ import { UsuarioContext } from '../../contexts/user';
 
 const Login = () => {
 
-  const { signIn, signUp } = useContext(UsuarioContext);
+  const { signIn, signUp, resetPassword } = useContext(UsuarioContext);
 
   const [currentButton, setCurrentButton] = useState('aluno');
   const [email, setEmail] = useState("");
@@ -42,6 +43,15 @@ const Login = () => {
       console.warn(err);
     }
 
+  }
+
+  function handleReset(){
+
+    try {
+      resetPassword(email)
+    } catch (err) {
+      console.warn(err);
+    }
   }
 
 
@@ -109,9 +119,13 @@ const Login = () => {
           onChangeText={text => setPassword(text)}
           value={password}
         />
-        <ForgotPassword>
-          esqueci minha senha
-        </ForgotPassword>
+
+        <ButtonForgot
+            onPress={() => { handleReset() }}
+          >
+            <ForgotPassword>Esqueci minha senha</ForgotPassword>
+        </ButtonForgot>
+
         <ContainerButtons>
           <Button
             invert={true}

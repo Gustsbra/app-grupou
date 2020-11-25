@@ -53,17 +53,11 @@ export const InputTexto = styled.Text`
   
 `
 
-export const ButtonForgot = styled.TouchableOpacity`
-  width:100%;
-  background-color:#ffffff;
-  justify-content:center;
-  align-items:center;
-  margin-top:30px;
-  `
-
 export const ForgotPassword = styled.Text`
   color:#ae1b73;
   font-size:14px;
+  text-align:right;
+  margin-top:5px;
 `
 
 

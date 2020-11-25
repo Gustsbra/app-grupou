@@ -3,7 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import Dashboard from '../pages/Dashboard';
 import Chat from '../pages/Chat';
+import Groups from '../pages/Groups'
 import Settings from '../pages/Settings';
 
 const Tab = createBottomTabNavigator();
@@ -11,7 +13,7 @@ const Tab = createBottomTabNavigator();
 const AppRoutes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Grupos"
+      initialRouteName="Dashboard"
       tabBarOptions={
         {
           activeTintColor: 'tomato',
@@ -20,8 +22,23 @@ const AppRoutes = () => {
       }
     >
       <Tab.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={
+          {
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons
+                name="view-dashboard"
+                color={color}
+                size={32}
+              />
+            )
+          }
+        }
+      />
+      <Tab.Screen
         name="Grupos"
-        component={Chat}
+        component={Groups}
         options={
           {
             tabBarIcon: ({ color }) => (
@@ -35,13 +52,13 @@ const AppRoutes = () => {
         }
       />
       <Tab.Screen
-        name="Configurações"
+        name="Perfil"
         component={Settings}
         options={
           {
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons
-                name="settings"
+                name="account-settings"
                 size={32}
                 color={color}
               />

@@ -35,7 +35,7 @@ const UsuarioProvider = ({ children }) => {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(resp => {
-        console.warn(resp)
+        console.warn('Usuario cadastrado!')
       })
       .catch(err => {
         console.warn(err)
@@ -52,8 +52,18 @@ const UsuarioProvider = ({ children }) => {
       })
   }
 
+  const resetPassword = (email) => {
+    firebase.auth().sendPasswordResetEmail(email)
+    .then(resp => {
+      console.warn('Instruções enviadas para o e-mail!')
+    })
+    .catch(err => {
+      console.warn(err)
+    })
+  }
+
   return (
-    <UsuarioContext.Provider value={{ user, signIn, signOut, signUp }}>
+    <UsuarioContext.Provider value={{ user, signIn, signOut, signUp, resetPassword }}>
       {children}
     </UsuarioContext.Provider>
   )
