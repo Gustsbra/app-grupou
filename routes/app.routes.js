@@ -38,7 +38,7 @@ const AppRoutes = () => {
       />
       <Tab.Screen
         name="Grupos"
-        component={Groups}
+        component={Chat}
         options={
           {
             tabBarIcon: ({ color }) => (
