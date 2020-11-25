@@ -1,24 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { Text, Image, ActivityIndicator } from 'react-native';
 
 import {
   Container,
-  Texto,
-  CaixaLogin,
-  Botao,
-  BotaoTexto,
-  ContainerBotoes,
-  Input,
-  InputTexto,
-  ContainerButtons,
-  Button,
-  ButtonText,
-  ForgotPassword,
-  Logo,
-  CaixaTextoChamada,
-  TextoChamada,
-  TextoGrupou
-
+  Texto
 } from './styles';
 
 
@@ -26,13 +10,9 @@ const Dashboard = () => {
 
   return (
     <Container>
-
-      <CaixaTextoChamada>
-        <TextoChamada>
+        <Texto>
           Tela principal com Dashboard
-        </TextoChamada>
-      </CaixaTextoChamada>
-
+        </Texto>
     </Container>
   )
   }

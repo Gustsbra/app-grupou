@@ -1,40 +1,44 @@
-import React, { useState, useContext } from 'react';
-import { Text, Image, ActivityIndicator } from 'react-native';
+import React, { useState, useContext, useReducer } from 'react';
+
+import { UsuarioContext } from '../../contexts/user';
 
 import {
   Container,
-  Texto,
-  CaixaLogin,
-  Botao,
-  BotaoTexto,
-  ContainerBotoes,
-  Input,
-  InputTexto,
   ContainerButtons,
   Button,
-  ButtonText,
-  ForgotPassword,
-  Logo,
-  CaixaTextoChamada,
-  TextoChamada,
-  TextoGrupou
-
+  ButtonText
 } from './styles';
+
 
 
 const Groups = () => {
 
+  const { signOut } = useContext(UsuarioContext)
+
   return (
     <Container>
-
-      <CaixaTextoChamada>
-        <TextoChamada>
-          Tela principal com os Grupos que pertenço
-        </TextoChamada>
-      </CaixaTextoChamada>
+      <ContainerButtons>
+        <Button invert={true}
+          onPress={() => { signOut() }}
+        >
+          <ButtonText invert={true}>Chat do Grupo 1</ButtonText>
+        </Button>
+        
+        <Button invert={true}
+          onPress={() => { signOut() }}
+        >
+          <ButtonText invert={true}>Chat do Grupo 2</ButtonText>
+        </Button>
+        
+        <Button invert={true}
+          onPress={() => { signOut() }}
+        >
+          <ButtonText invert={true}>Chat do Grupo 3</ButtonText>
+        </Button>
+      </ContainerButtons>
 
     </Container>
   )
-  }
-  
+}
+
 export default Groups
