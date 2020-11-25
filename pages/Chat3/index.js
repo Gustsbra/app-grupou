@@ -5,7 +5,8 @@ import { UsuarioContext } from '../../contexts/user';
 
 import {
   Container,
-  Texto,
+  ContainerEmail,
+  TextoEmail,
   ContainerButtons,
   Button,
   ButtonText,
@@ -41,7 +42,7 @@ const Chat3 = ({navigation}) => {
 
   useEffect(() => {
     const listener = firebase.firestore()
-      .collection('chat3').onSnapshot(ListenUpdateMessages)
+      .collection('chat3').orderBy("timestamp","asc").onSnapshot(ListenUpdateMessages)
 
     return () => listener()
   }, [])
@@ -57,7 +58,9 @@ const Chat3 = ({navigation}) => {
     try {
       firebase.firestore().collection('chat3').add({
         texto: newMessage,
-        lida: false
+        lida: false,
+        usuario: user.email,
+        timestamp: new Date().getTime()
       })
       setNewMessage("");
     } catch (err) {
@@ -67,19 +70,19 @@ const Chat3 = ({navigation}) => {
 
   return (
     <Container>
-
+      <ContainerEmail>
+        <TextoEmail>
+          {user.email}
+        </TextoEmail>
+      </ContainerEmail>
 
       <ContainerMessages>
         {messages.map(message => (
           <Message key={message.id}>{message.texto}</Message>
         ))}
-
       </ContainerMessages>
 
-
-      
       <ContainerButtons>
-
         <Input
           placeholder="Digite sua mensagem"
           onChangeText={text => setNewMessage(text)}
@@ -92,6 +95,7 @@ const Chat3 = ({navigation}) => {
           <ButtonText invert={true}>Enviar</ButtonText>
         </Button>
       </ContainerButtons>
+
     </Container>
   )
 }

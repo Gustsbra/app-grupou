@@ -10,23 +10,34 @@ export const Container = styled.View`
   margin-top:25px;
 `;
 
+export const ContainerEmail = styled.View`
+  background-color: #AE1B73;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+`;
+
+export const TextoEmail = styled.Text`
+ color:#fff;
+ font-size:20px;
+ text-align:center;
+`
 
 export const Texto = styled.Text`
  color:#fff;
  font-size:20px;
  text-align:center;
-
 `
 
 export const ContainerMessages = styled.View`
   width:100%;
   flex:1;
-
-`;
+`
 
 export const Message = styled.Text`
  color:#fff;
- font-size:14px;
+ font-size:20px;
  text-align:justify;
  padding-top:5px;
 
